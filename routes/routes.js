@@ -1,0 +1,10 @@
+const customercontroller = require('../controller/customer.controller')
+const express = require('express')
+const routes = express.Router()
+routes.route('/customer')
+    .post(customercontroller.AddCustomer)
+    .get(customercontroller.viewCustomer)
+routes.route('/customer/:id')
+    .get(customercontroller.SingleViewCustomber)
+    // .post(customercontroller.AddCustomer)
+module.exports = routes
